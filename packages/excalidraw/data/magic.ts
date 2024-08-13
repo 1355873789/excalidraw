@@ -48,7 +48,7 @@ export async function diagramToHTML({
   theme?: Theme;
 }) {
   const body: OpenAIInput.ChatCompletionCreateParamsBase = {
-    model: "gpt-4-vision-preview",
+    model: "gpt-4o-mini",
     // 4096 are max output tokens allowed for `gpt-4-vision-preview` currently
     max_tokens: 4096,
     temperature: 0.1,
@@ -84,7 +84,7 @@ export async function diagramToHTML({
     | ({ ok: true } & OpenAIOutput.ChatCompletion)
     | ({ ok: false } & OpenAIOutput.APIError);
 
-  const resp = await fetch("https://api.openai.com/v1/chat/completions", {
+  const resp = await fetch("https://vip.ooo.cool/v1/chat/completions", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
